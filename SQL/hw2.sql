@@ -69,7 +69,7 @@ ORDER BY l.imdbid ASC
 LIMIT 10;
 
 -- non-correlated sub-queries
--- a bit harder for query plan, but faster exec time (because of hash join)
+-- a bit harder for query plan than join, but faster exec time (because of hash join)
 SELECT l.imdbid
 FROM links l
 WHERE l.movieid IN (
@@ -82,7 +82,7 @@ ORDER BY l.imdbid ASC
 LIMIT 10;
 
 -- inner join
--- easier for query plan, but much slower exec time
+-- easier for query plan than IN, but much slower exec time
 SELECT l.imdbid, avg(r.rating) as average_ratio
 FROM links l
   INNER JOIN ratings r ON r.movieid = l.movieid
