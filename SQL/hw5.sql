@@ -23,3 +23,17 @@ FROM (SELECT r.userid, array_agg(movieid) as user_views
       FROM (SELECT userid, movieid FROM ratings GROUP BY userid, movieid) as r
       GROUP BY r.userid) aggregated_views;
 
+-- Используя следующий синтаксис, создайте функцию cross_arr оторая принимает на вход два массива arr1 и arr2. 
+-- Функция возвращает массив, который представляет собой пересечение контента из обоих списков.
+-- PS: именованные аргументы нормально работают в 10ке для SQL диалекта
+CREATE OR REPLACE FUNCTION cross_arr(arr1 int [], arr2 int [])
+  RETURNS int []
+language sql as
+$FUNCTION$
+SELECT ARRAY(SELECT UNNEST(arr1)
+             INTERSECT
+             SELECT UNNEST(arr2)
+);
+$FUNCTION$;
+
+
