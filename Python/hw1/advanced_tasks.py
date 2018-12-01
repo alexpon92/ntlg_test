@@ -22,9 +22,9 @@ num = 10011
 
 # handmade algorithm
 num = str(num)[::-1]
-res, pos = 0, 0
-for n in num:
-    res += int(n) * 2 ** (int(pos))
-    pos += 1
+res = 0
+
+for n in range(len(num)):
+    res += int(num[n]) * 2 ** (int(n))
 
 print(res)
