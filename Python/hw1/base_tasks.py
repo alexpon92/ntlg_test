@@ -7,7 +7,7 @@ import math
 """
 long_phrase = 'Насколько проще было бы писать программы, если бы не заказчики'
 short_phrase = '640Кб должно хватить для любых задач. Билл Гейтс (по легенде)'
-print(f'Is long_phrase is longer than short_phrase: {len(long_phrase) > len(short_phrase)}')
+print(f'Is long_phrase longer than short_phrase? Answer: {len(long_phrase) > len(short_phrase)}')
 
 """
 2. Дана строка text. Определите какая из двух букв встречается в нем чаще - 'а' или 'и'.
