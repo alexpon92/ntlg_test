@@ -25,6 +25,6 @@ num = str(num)[::-1]
 res = 0
 
 for n in range(len(num)):
-    res += int(num[n]) * 2 ** (int(n))
+    res += int(num[n]) * 2 ** n
 
 print(res)
