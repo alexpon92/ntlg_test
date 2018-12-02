@@ -12,6 +12,10 @@ first_val = first_val ^ sec_val
 
 print(first_val, sec_val)
 
+# python syntax ver
+first_val, sec_val = sec_val, first_val
+print(first_val, sec_val)
+
 """
 Дано число в двоичной системе счисления: num=10011. Напишите алгоритм перевода этого числа в привычную 
 нам десятичную систему счисления.
