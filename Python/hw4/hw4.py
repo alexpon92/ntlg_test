@@ -152,10 +152,9 @@ def get_full_weeks(start_date, end_date):
     """
     weeks = []
 
-    if start_date.weekday() == 1:
-        closest_monday = start_date
-    else:
-        closest_monday = start_date + timedelta(days=-start_date.weekday(), weeks=1)
+    closest_monday = (start_date + timedelta(days=-start_date.weekday(), weeks=1)).replace(
+        hour=0, minute=0, second=0, microsecond=0
+    )
 
     for weeks_num in range(int((end_date - closest_monday).days / 7)):
         weeks.append(
