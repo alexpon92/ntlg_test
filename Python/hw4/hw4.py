@@ -159,7 +159,7 @@ def get_full_weeks(start_date, end_date):
     for weeks_num in range(int((end_date - closest_monday).days / 7)):
         weeks.append(
             [
-                (closest_monday + timedelta(days=((weeks_num * 7) + (i - 1)))).strftime('%Y-%m-%d') for i in range(1, 8)
+                (closest_monday + timedelta(days=((weeks_num * 7) + i))).strftime('%Y-%m-%d') for i in range(7)
             ]
         )
 
