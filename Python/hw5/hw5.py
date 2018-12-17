@@ -89,7 +89,7 @@ print('=====================')
 категорий 4, 12 и 21 за период с 2005 по 2010 года. Не учитывайте в расчетах отрицательные значения quantity.
 """
 
-power_data = pd.read_csv('./hw5/power.csv')
+power_data = pd.read_csv('power.csv')
 sub_data = power_data.query('country in ("Latvia", "Lithuania", "Estonia") '
                             '& category in (4, 12, 21) & 2005 < year < 2010 & quantity >= 0')
 
