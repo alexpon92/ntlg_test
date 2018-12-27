@@ -99,15 +99,11 @@ top_rated_content_ids = [
 # --------------------------------------------------------------
 
 # Задание по PyMongo
-# mongo = MongoClient(**{
-#     'host': os.environ['APP_MONGO_HOST'],
-#     'port': int(os.environ['APP_MONGO_PORT'])
-# })
-
 mongo = MongoClient(**{
-    'host': 'localhost',
-    'port': 27018
+    'host': os.environ['APP_MONGO_HOST'],
+    'port': int(os.environ['APP_MONGO_PORT'])
 })
+
 
 # Получите доступ к коллекции tags
 db = mongo["movie"]
